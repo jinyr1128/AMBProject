@@ -1,0 +1,33 @@
+<!-- create.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>AMB Project - Create Post</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1>게시글 작성하기</h1>
+  <form th:action="@{/posts/create}" th:object="${post}" method="post">
+    <div class="form-group">
+      <label>제목</label>
+      <input type="text" th:field="*{title}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>작성자</label>
+      <input type="text" th:field="*{author}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>비밀번호</label>
+      <input type="password" th:field="*{password}" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>내용</label>
+      <textarea th:field="*{content}" class="form-control" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</body>
+</html>

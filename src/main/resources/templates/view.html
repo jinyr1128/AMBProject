@@ -1,0 +1,21 @@
+<!-- view.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>AMB Project - View Post</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+<div class="container mt-5">
+  <h3>제목 : <span th:text="${post.title}"></span></h3>
+  <h4>작성자 : <span th:text="${post.author}"></span></h4>
+  <p>내용 : <span th:text="${post.content}"></span></p>
+  <!-- Home Button -->
+  <a href="/posts" class="btn btn-primary">Home</a>
+  </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>AMB Project</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <!-- Header -->
+  <h1>AMB Project - Anonymous Message Board</h1>
+
+  <!-- Post List -->
+  <a href="/posts/create" class="btn btn-primary mb-3">글 작성하기</a>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>제목</th>
+      <th>작성자</th>
+      <th>작성일</th>
+      <th>눌러볼텨?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="post : ${posts}">
+      <td th:text="${post.title}"></td>
+      <td th:text="${post.author}"></td>
+      <td th:text="${post.createdAt}"></td>
+      <td>
+        <a th:href="@{'/posts/' + ${post.id}}" class="btn btn-primary">보기</a>
+        <a th:href="@{'/posts/' + ${post.id} + '/delete'}" class="btn btn-danger">삭제</a>
+        <a th:href="@{'/posts/' + ${post.id} + '/update'}" class="btn btn-info">수정</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- Footer -->
+  <p class="mt-5">&copy; 2023 AMB Project.</p>
+</div>
+</body>
+</html>

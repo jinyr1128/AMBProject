@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Post</title>
+</head>
+<body>
+<h2>Delete Post</h2>
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            게시글 삭제 확인
+        </div>
+        <div class="card-body">
+            <form th:action="@{/posts/{id}/delete(id=${post.id})}" th:object="${post}" method="post">
+                <input type="hidden" th:value="${post.id}" th:field="*{id}"/>
+                <p>이 게시글을 삭제 하시겠습니까? (돌이킬수없어요~)</p>
+                <p><strong>제목:</strong> <span th:text="${post.title}"></span></p>
+                <p><strong>내용:</strong> <span th:text="${post.content}"></span></p>
+                <div class="form-group">
+                    <label for="password">비밀번호를 입력하세요:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-danger">삭제하기</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
