@@ -3,6 +3,7 @@ package com.example.ambproject.service;
 import com.example.ambproject.model.Post;
 import com.example.ambproject.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +21,9 @@ public class PostService {
         return postRepository.save(post);
     }
 
-
+    // 작성일 기준 내림차순 정렬 추가
     public List<Post> getAllPosts() {
-        return postRepository.findAll();
+        return postRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
     }
 
     public Optional<Post> getPostById(Long id) {
