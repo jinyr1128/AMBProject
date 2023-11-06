@@ -23,8 +23,10 @@ AMBProject는 Spring 을 사용하여 개발된 간단한 익명게시판 웹입
 - API 명세서<br>
 ![스크린샷 2023-11-05 오전 10.15.34 복사본.png](img%2F%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-05%20%EC%98%A4%EC%A0%84%2010.15.34%20%EB%B3%B5%EC%82%AC%EB%B3%B8.png)<br>
 <br>
+
 - ERD<br>
-![스크린샷 2023-11-05 오전 10.42.10.png](img%2F%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-05%20%EC%98%A4%EC%A0%84%2010.42.10.png)
+![스크린샷 2023-11-05 오전 10.42.10.png](img%2F%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-11-05%20%EC%98%A4%EC%A0%84%2010.42.10.png)<br>
+
 ## 디렉토리 구조
 - `model 패키지`: Post 엔터티 클래스를 포함하며, 이는 게시물을 나타냅니다. 이 클래스에는 `id`, `title`, `author`, `content`, `password`, `createdAt`과 같은 필드가 있습니다.
 - `repository 패키지`: `JpaRepository`를 확장하는 `PostRepository` 인터페이스를 포함합니다. 이를 통해 `Post` 엔터티에 대한 CRUD 작업을 수행할 수 있습니다.
