@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="text-center text-danger">Error Occurred</h1>
+  <div class="alert alert-danger mt-4">
+    <strong>오류내용!!!: </strong> <span th:text="${errorMessage}">Error Details</span>
+  </div>
+  <div class="text-center mt-4">
+    <a href="/posts" class="btn btn-primary">돌아가기</a>
+  </div>
+</div>
+
+</body>
+</html>
